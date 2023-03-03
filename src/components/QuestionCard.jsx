@@ -9,7 +9,7 @@ function QuestionCard({ questionNumber, questionContent }) {
         <div className="card-body text-center">
           <h2 className="card-title mb-4">Question No : {questionNumber}</h2>
           <p>
-            <MathJax>{questionContent}</MathJax>
+            <MathJax dynamic>{questionContent}</MathJax>
           </p>
         </div>
       </div>
