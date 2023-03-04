@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { MathJax } from "better-react-mathjax";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { MathJax } from 'better-react-mathjax';
 
 function QuestionCard({ questionNumber, questionContent }) {
   return (
-    <div className="text-2xl w-full bg-indigo-300 p-5 mb-4 mt-4 rounded-lg">
-      <div className="card  bg-base-100">
-        <div className="card-body text-center">
-          <h2 className="card-title mb-4">Question No : {questionNumber}</h2>
+    <div className="max-w-5xl p-5 mt-4 mb-4 text-2xl bg-white shadow-lg shadow-gray-400 rounded-lg w-full lg:w-[64rem]">
+      <div className="card bg-base-100">
+        <div className="text-center card-body">
+          <h2 className="mb-4 card-title">Question No : {questionNumber}</h2>
           <p>
             <MathJax dynamic>{questionContent}</MathJax>
           </p>

@@ -1,18 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import QuestionCard from "./QuestionCard";
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import QuestionCard from './QuestionCard';
 
 function Questions({ questions }) {
   const [question, setQuestion] = useState(null);
 
   const onQuestionNavigate = (action) => {
-    if (action === "prev") {
+    if (action === 'prev') {
       setQuestion((prev) => ({
         number: prev.number - 1,
         content: questions[prev.number - 1].Question,
       }));
-    } else if (action === "next") {
+    } else if (action === 'next') {
       setQuestion((prev) => ({
         number: prev.number + 1,
         content: questions[prev.number + 1].Question,
@@ -25,9 +25,9 @@ function Questions({ questions }) {
   }, []);
 
   return (
-    <div className="m-3">
-      <h1 className="text-3xl text-center font-bold italic">NIO Class</h1>
-      <div className="h-full flex justify-center items-center flex-col">
+    <div className="flex flex-col items-center justify-center w-full h-full gap-4 p-4 bg-gray-200">
+      <h1 className="text-3xl italic font-bold text-center">NIO Class</h1>
+      <div className="flex flex-col items-center justify-center ">
         <div>
           {question ? (
             <QuestionCard
@@ -40,16 +40,16 @@ function Questions({ questions }) {
           <button
             disabled={!question || question?.number === 0}
             type="button"
-            onClick={() => onQuestionNavigate("prev")}
-            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mr-1 disabled:bg-slate-400"
+            onClick={() => onQuestionNavigate('prev')}
+            className="px-4 py-2 mr-1 font-semibold text-gray-800 bg-white border border-gray-400 rounded shadow hover:bg-gray-100 disabled:bg-slate-400"
           >
             Previous
           </button>
           <button
             disabled={!question || question?.number === questions.length - 1}
             type="button"
-            onClick={() => onQuestionNavigate("next")}
-            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ml-1 disabled:bg-slate-400"
+            onClick={() => onQuestionNavigate('next')}
+            className="px-4 py-2 ml-1 font-semibold text-gray-800 bg-white border border-gray-400 rounded shadow hover:bg-gray-100 disabled:bg-slate-400"
           >
             Next
           </button>
